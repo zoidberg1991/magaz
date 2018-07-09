@@ -1,0 +1,30 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+  {{ product.name }}
+{% endblock %}
+{% block content %}
+  <div class="product-detail">
+    <div class="col-sm-4">
+    <div class="imgwrapper">
+      <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "no-avatar.gif"%}{% endif %}"width="115">
+    </div>
+    </div>
+    <div class="col-sm-8">
+      <h1>{{ product.name }}</h1>
+      <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+      <p class="price">
+        {{ product.price }} руб.
+      </p>
+
+    </div>
+  </div>
+    <form action="{% url "cart:add_cart" product.id %}" method="post">
+    {% csrf_token %}
+    {{ cart_product_form }}
+    <input type="submit" value="Добавить в корзину">
+ <span>
+        {{ product.description | linebreaks}}
+      </span>
+</form>
+{% endblock %}
