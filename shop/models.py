@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 
-# Create your models here.
+
 # Модель категории
 class Category(models.Model):
     name = models.CharField(max_length=200, db_index=True)
@@ -34,6 +34,8 @@ class Product(models.Model):
 
     class Meta:
         ordering = ['name']
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продукт'
         index_together = [
             ['id', 'slug']
         ]

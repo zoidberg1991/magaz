@@ -122,11 +122,11 @@ thead{
   margin-bottom: 10px;
   }
 body {
-    background:url("../white-hollow-spheroids.png") right top !important;
+    background:url("../bg-light-4869.png") right top !important;
 }
 .sas {
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 300px;
+  max-width: 300px;
   display: block;
   margin: auto;
 }

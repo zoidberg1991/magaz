@@ -7,4 +7,4 @@ class OrderCreateForm(forms.ModelForm):
         model = Order
         fields = ['first_name', 'address', 'city']
 
-    phone_number = forms.CharField(initial='+7')
+    phone_number = forms.CharField(initial='+7' ,label="Телефон")
